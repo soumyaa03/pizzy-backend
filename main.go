@@ -6,7 +6,6 @@ import (
 
 	"github.com/gin-gonic/gin"
 	"github.com/joho/godotenv"
-	"github.com/soumyaa03/pizzy-backend/middleware"
 	"github.com/soumyaa03/pizzy-backend/routes"
 )
 
@@ -22,7 +21,6 @@ func main() {
 	router := gin.New()
 	router.Use(gin.Logger())
 	routes.UserRoutes(router)
-	router.Use(middleware.Authentication())
 
 	routes.FoodRoutes(router)
 	routes.MenuRoutes(router)
